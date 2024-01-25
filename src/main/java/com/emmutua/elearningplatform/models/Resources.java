@@ -1,12 +1,18 @@
 package com.emmutua.elearningplatform.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@SuperBuilder
 @Table(
         name = "resources",
         uniqueConstraints = @UniqueConstraint(
@@ -15,7 +21,7 @@ import lombok.NoArgsConstructor;
         )
 
 )
-public class Resources {
+public class Resources extends BaseEntity{
     @Id
     @GeneratedValue
     private Integer resourceId;

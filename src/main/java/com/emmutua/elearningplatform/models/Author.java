@@ -2,19 +2,21 @@ package com.emmutua.elearningplatform.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Builder
+@SuperBuilder
 @Table(
         name = "AUTHOR_TBL"
 )
-public class Author {
+public class Author extends BaseEntity {
     @Id //specify how ids will be generated
     @SequenceGenerator(
             name = "author_sequence",
@@ -41,17 +43,6 @@ public class Author {
             mappedBy = "authors"
     )
     private List<Course> courses;
-
-    @Column(
-            updatable = false,
-            nullable = false
-    )
-    private LocalDateTime createdAt;
-
-    @Column(
-            insertable = false
-    )
-    private LocalDateTime lastUpdated;
 }
 
 /**

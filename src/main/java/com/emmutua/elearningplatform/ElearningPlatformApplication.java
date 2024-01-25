@@ -51,3 +51,19 @@ public class ElearningPlatformApplication {
 /**
  * Repository - abstraction to reduce boilerplate code req to impl DAO, perform CRUD
  */
+
+/**
+ * Inheritance ensures
+ * -Code reuse and modularity
+ * -Simplified queries
+ * - When making change to the base class you should be careful about the child classes
+ *
+ * - Try composition
+ * -
+ *
+ */
+
+/**
+ * We want a base entity/ Abstract entity for common fields id, createdAt, lastModifiedAt, createdBy, lastModifiedBy
+ * The base class should have the annotation with @MappedSuperClass - mapped to database table, has common properties (Other classes will inherit)
+ */

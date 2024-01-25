@@ -1,13 +1,19 @@
 package com.emmutua.elearningplatform.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
+@SuperBuilder
 @Entity
-public class Lecture {
+public class Lecture extends BaseEntity{
     @Id
     @GeneratedValue(
             generator = "lecture_id_gen",
