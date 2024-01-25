@@ -19,6 +19,15 @@ public class Section {
     )
     private String order;
 
-//    @OneToMany(mappedBy = "section")
-//    private List<Lecture> lectures;
+    //Many sections one course
+    //Many to one.. must have the join column
+    @ManyToOne
+    @JoinColumn(
+            name = "course_id",
+            referencedColumnName = "courseId"
+    )
+    private Course course;
+
+    @OneToMany(mappedBy = "section")
+    private List<Lecture> lectures;
 };

@@ -23,12 +23,12 @@ public class Lecture {
     private Integer lecturerId;
     private String name;
 
-//    @ManyToOne(optional = false)
-//    @JoinColumn(
-//            name = "section_id",
-//            referencedColumnName = "sectionId"
-//    )
-//    private Section section;
+    @ManyToOne
+        @JoinColumn(
+            name = "section_id",
+            referencedColumnName = "sectionId"
+    )
+    private Section section;
 
     @OneToOne
     @JoinColumn(

@@ -41,7 +41,11 @@ public class ElearningPlatformApplication {
 
 
 /**
+ * Relationship -> Connection between pieces of data
+ *  -> Model real world /Good structure in db, avoid redudancy, model real world scenarios, ensure integrity
  *
+ *  Unidirectional relationship ->  Means that one entity has a relationship with another but the other does not have the corresponding relationship with other
+ *  Bidirectional -> Both entities have relationship, more care to maintain, complex, but allow you to navigate well in between
  */
 
 /**

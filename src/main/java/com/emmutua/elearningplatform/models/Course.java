@@ -16,13 +16,7 @@ public class Course {
     private Integer title;
     private Integer description;
 
-//    @OneToMany
-//    @JoinColumn(
-//            name = "section_id",
-//            referencedColumnName = "sectionId"
-//    )
-//    private List<Section> sections;
-
+    //Owner
     @ManyToMany(
             //Pass permissions to child elem to allow save a course
             cascade = CascadeType.ALL //You have the privellege to add a new auther
@@ -33,4 +27,10 @@ public class Course {
             inverseJoinColumns = @JoinColumn(name = "author_id", referencedColumnName = "authorId")
     )
     List<Author> authors;
+
+    //One course many sections
+    //one to many say mapped by
+    @OneToMany(mappedBy = "course")
+    private List<Section> sections;
+
 }

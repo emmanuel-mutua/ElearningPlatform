@@ -29,6 +29,7 @@ public class Resources {
     private ResourceType resourceType;
 
     @OneToOne(
+            mappedBy = "resources",
             optional = false
     )
     private Lecture lecture;
