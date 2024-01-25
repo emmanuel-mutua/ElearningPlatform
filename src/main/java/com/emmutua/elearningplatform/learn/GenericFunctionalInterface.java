@@ -1,5 +1,7 @@
 package com.emmutua.elearningplatform.learn;
 
+import org.springframework.context.annotation.Bean;
+
 /**
  * Generic Functional interfaces (They can allow any data type)
  */
@@ -19,7 +21,7 @@ class MyClass{
         //Get name
         GenericFunctionalInterface<String> genericFunctionalInterface = (id) -> "Emmanuel Mulwa";
         System.out.println(genericFunctionalInterface.func("dfjkafl"));
-
+        
         Double myDouble = 2.12;
         GenericFunctionalInterface<Double>  genericFunctionalInterface1= (myDoubleArg) -> {
             double v = myDoubleArg * myDoubleArg;

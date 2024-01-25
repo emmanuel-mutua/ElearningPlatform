@@ -1,5 +1,6 @@
 package com.emmutua.elearningplatform;
 
+import com.emmutua.elearningplatform.models.Author;
 import com.emmutua.elearningplatform.repositories.AuthorRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +18,7 @@ public class ElearningPlatformApplication {
     public CommandLineRunner commandLineRunner(
             AuthorRepository authorRepository
     ){
-        return args -> {
+        return (args) -> {
 
         };
     }
@@ -36,6 +37,11 @@ public class ElearningPlatformApplication {
  * - JPA Is an Interface, defines how you can map an entity to a table, perform operations to the tables
  * - Hibernate impl JPA (Does all things can be done in JPA)
  * - Spring data jpa is an abstraction layer on top of JPA, That reduces the boilerplate code required to impl DAO
+ */
+
+
+/**
+ *
  */
 
 /**

@@ -8,7 +8,9 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Builder
 @Table(
         name = "AUTHOR_TBL"
 )
