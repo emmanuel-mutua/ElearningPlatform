@@ -5,8 +5,7 @@ package com.emmutua.elearningplatform.learn;
  */
 @FunctionalInterface
 public interface FunctionalInterfaceToGetName {
-    String getName();
-
+    String getName(String id);
 }
 
 
@@ -17,7 +16,7 @@ public interface FunctionalInterfaceToGetName {
 
 class MyClass{
     public static void main(String[] args) {
-        FunctionalInterfaceToGetName functionalInterfaceToGetName = () -> "Emmanuel Mulwa";
-        System.out.println(functionalInterfaceToGetName.getName());
+        FunctionalInterfaceToGetName functionalInterfaceToGetName = (id) -> "Emmanuel Mulwa";
+        System.out.println(functionalInterfaceToGetName.getName("dkfalfajfla"));
     }
 }
