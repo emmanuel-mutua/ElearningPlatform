@@ -13,26 +13,21 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Entity
-public class Lecture extends BaseEntity{
+public class Lecture extends BaseEntity {
     @Id
     @GeneratedValue(
             generator = "lecture_id_gen",
-            strategy = GenerationType.TABLE
+            strategy = GenerationType.SEQUENCE
     )
-    @TableGenerator(
-            name = "lecture_id_gen",
-            table = "id_generator",
-            pkColumnName = "id_name",
-            pkColumnValue = "id_value",
-            allocationSize = 1
+    @SequenceGenerator(
+            name = "lecture_id_gen"
     )
     private Integer lecturerId;
     private String name;
 
     @ManyToOne
-        @JoinColumn(
-            name = "section_id",
-            referencedColumnName = "sectionId"
+    @JoinColumn(
+            name = "section_id"
     )
     private Section section;
 

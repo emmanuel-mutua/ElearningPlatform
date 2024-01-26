@@ -1,10 +1,12 @@
 package com.emmutua.elearningplatform.models;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -13,14 +15,11 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @SuperBuilder
-@Table(
-        name = "AUTHOR_TBL"
-)
 public class Author extends BaseEntity {
-    @Id //specify how ids will be generated
+    @Id
     @SequenceGenerator(
             name = "author_sequence",
-            sequenceName = "author_sequence", //Name of the database obj where to obtain the primary keys
+            sequenceName = "author_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
@@ -44,7 +43,3 @@ public class Author extends BaseEntity {
     )
     private List<Course> courses;
 }
-
-/**
- * Can create your own sq and add own allocation size
- */
