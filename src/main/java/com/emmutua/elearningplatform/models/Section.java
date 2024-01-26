@@ -22,9 +22,6 @@ public class Section extends BaseEntity {
             name = "section_order"
     )
     private String order;
-
-    //Many sections one course
-    //Many to one.. must have the join column
     @ManyToOne
     @JoinColumn(
             name = "course_id",

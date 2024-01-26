@@ -9,6 +9,7 @@ import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.Polymorphism;
 import org.hibernate.annotations.PolymorphismType;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,9 +24,7 @@ import org.hibernate.annotations.PolymorphismType;
 
 )
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-// @DiscriminatorColumn(name = "resource_type") For single table
-@Polymorphism(type = PolymorphismType.EXPLICIT) //Allow get all the resources without the sub-classes
-public class Resources{
+public class Resources extends BaseEntity{
     @Id
     @GeneratedValue
     private Integer resourceId;
