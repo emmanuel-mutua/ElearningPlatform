@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.Polymorphism;
+import org.hibernate.annotations.PolymorphismType;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,7 +22,10 @@ import lombok.experimental.SuperBuilder;
         )
 
 )
-public class Resources extends BaseEntity{
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+// @DiscriminatorColumn(name = "resource_type") For single table
+@Polymorphism(type = PolymorphismType.EXPLICIT) //Allow get all the resources without the sub-classes
+public class Resources{
     @Id
     @GeneratedValue
     private Integer resourceId;
@@ -32,8 +36,6 @@ public class Resources extends BaseEntity{
             nullable = false
     )
     private String resourceUrl;
-    private ResourceType resourceType;
-
     @OneToOne(
             mappedBy = "resources",
             optional = false
