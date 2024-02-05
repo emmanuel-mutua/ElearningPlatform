@@ -24,7 +24,6 @@ import org.hibernate.annotations.PolymorphismType;
 )
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 // @DiscriminatorColumn(name = "resource_type") For single table
-@Polymorphism(type = PolymorphismType.EXPLICIT) //Allow get all the resources without the sub-classes
 public class Resources{
     @Id
     @GeneratedValue

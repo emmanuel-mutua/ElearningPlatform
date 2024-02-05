@@ -5,7 +5,9 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -43,6 +45,7 @@ public class Author extends BaseEntity {
             mappedBy = "authors"
     )
     private List<Course> courses;
+    // private Set<Course> courseSet = new HashSet<>();
 }
 
 /**

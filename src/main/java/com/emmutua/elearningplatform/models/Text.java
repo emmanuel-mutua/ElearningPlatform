@@ -16,7 +16,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 //@PrimaryKeyJoinColumn(name = "text_id")
-//@DiscriminatorValue("T")
+//@DiscriminatorValue("T") // For inheritance type single table
 public class Text extends Resources{
     private String content;
 }

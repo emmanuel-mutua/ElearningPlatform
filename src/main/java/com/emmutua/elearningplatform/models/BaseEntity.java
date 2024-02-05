@@ -8,8 +8,8 @@ import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
-@MappedSuperclass
-@Data
+@MappedSuperclass //Means that all classes that will inherit from this class will have all the properties of the class
+@Data //Getter and the setter
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
@@ -18,4 +18,6 @@ public class BaseEntity {
     private LocalDateTime lastModifiedAt;
     private String createdBy;
     private String modifiedBy;
+
+
 }
