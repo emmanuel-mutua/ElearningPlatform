@@ -8,5 +8,9 @@ spring:
     database: postgresql
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
+  security:
+    user:
+      name: root
+      password: root
 

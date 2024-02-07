@@ -19,8 +19,8 @@ public class Course extends BaseEntity {
     @Id
     @GeneratedValue
     private Integer courseId;
-    private Integer title;
-    private Integer description;
+    private String title;
+    private String description;
     //Owner
     @ManyToMany(
             cascade = CascadeType.ALL
