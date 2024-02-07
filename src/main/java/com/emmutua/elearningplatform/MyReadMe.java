@@ -78,5 +78,23 @@ public class MyReadMe {
 /**
  * You can create composite pks, eg with orders in an ecommerce application, we can not use username as pk, as we can have many orders for a certain user
  * but we can compine username and something like order-date to come up with a composite pk
+ *
+ * You can have a look at Faker<> Obj
+ * Update Query in JPA Should have @modifying - useful when you want to perfrom bulk updates
+ * Transactions ->
+ *      software transactions ensure data integrity. Transactions control the concurrent access of data by multiple programs. In the event of a system failure, transactions make sure that after recovery, the data will be in a consistent state.
+ *
+ *
+ *  Named queries - > Optimize the performance of applications
+ *                  -> Centralized management
+ *                  -> Used for complex queries
+ *                  -> Improve code readablity
+ *                  -> Organize and update query
+ *
+ *
+ *
  */
+
+//TODO LEARN JPA DYNAMIC QUERY AND DATABASE TRANSACTIONS
+
 }

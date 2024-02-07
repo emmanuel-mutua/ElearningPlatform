@@ -2,6 +2,8 @@ package com.emmutua.elearningplatform.learn;
 
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 /**
  * Generic Functional interfaces (They can allow any data type)
  */

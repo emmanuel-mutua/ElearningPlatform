@@ -15,6 +15,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@NamedQuery(
+        name = "Course.findByCourseTitle",
+        query = "SELECT OBJECT (course) FROM Course course WHERE LOWER(course.title) = :title"
+)
 public class Course extends BaseEntity {
     @Id
     @GeneratedValue
