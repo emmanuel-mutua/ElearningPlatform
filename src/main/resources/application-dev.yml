@@ -9,8 +9,12 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
   security:
     user:
       name: root
       password: root
+#        org.hibernate.dialect.PostgreSQLDialect  ensures that Hibernate generates SQL statements compatible with PostgreSQL syntax and optimizes the database interaction for PostgreSQL's features and capabilities
 
