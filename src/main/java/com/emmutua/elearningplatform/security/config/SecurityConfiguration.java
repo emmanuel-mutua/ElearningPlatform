@@ -22,12 +22,14 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("").permitAll()
-                        .anyRequest().authenticated()
-                        .anyRequest().permitAll()
+                .authorizeHttpRequests(req ->
+                        req
+                                .requestMatchers("/api/v1/auth/**")
+                                .permitAll()
+                                .anyRequest()
+                                .authenticated()
                 )
-                .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .sessionManagement(session-> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();

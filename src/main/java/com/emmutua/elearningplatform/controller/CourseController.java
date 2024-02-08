@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("api/v1")
 public class CourseController {
     @Autowired
-    CourseRepository courseRepository;
+    private CourseRepository courseRepository;
     @GetMapping("/courses")
     public List<Course> getAllCourses(){
         return courseRepository.findAll();

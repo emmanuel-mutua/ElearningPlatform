@@ -1,5 +1,5 @@
 package com.emmutua.elearningplatform.user;
 
- enum Role{
+ public enum Role{
      USER, ADMIN
  }
