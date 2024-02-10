@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -42,4 +43,9 @@ public class Author extends BaseEntity {
             mappedBy = "authors"
     )
     private List<Course> courses;
+
+    public void addCourses(Course course){
+        if (courses == null) courses = new ArrayList<>();
+        courses.add(course);
+    }
 }
