@@ -1,15 +1,12 @@
 package com.emmutua.elearningplatform.repositories;
 
-import com.emmutua.elearningplatform.models.Author;
-import com.emmutua.elearningplatform.models.Course;
+import com.emmutua.elearningplatform.learning_management.models.Author;
+import com.emmutua.elearningplatform.learning_management.models.Course;
+import com.emmutua.elearningplatform.learning_management.repositories.AuthorRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @ActiveProfiles("dev")

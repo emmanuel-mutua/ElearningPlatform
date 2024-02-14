@@ -1,6 +1,6 @@
 package com.emmutua.elearningplatform.security.config;
 
-import com.emmutua.elearningplatform.user.UserRepository;
+import com.emmutua.elearningplatform.user_management.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
