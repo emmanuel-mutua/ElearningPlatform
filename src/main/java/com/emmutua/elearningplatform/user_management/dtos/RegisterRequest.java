@@ -1,5 +1,6 @@
 package com.emmutua.elearningplatform.user_management.dtos;
 
+import com.emmutua.elearningplatform.user_management.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,4 +15,5 @@ public class RegisterRequest {
     private String lastname;
     private String email;
     private String password;
+    private Role role;
 }

@@ -1,5 +1,6 @@
 package com.emmutua.elearningplatform.security.config;
 
+import com.emmutua.elearningplatform.user_management.enums.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +11,9 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import static com.emmutua.elearningplatform.user_management.enums.Permission.*;
+import static org.springframework.http.HttpMethod.*;
 
 @Configuration
 @EnableWebSecurity
@@ -26,6 +30,12 @@ public class SecurityConfiguration {
                         req
                                 .requestMatchers("/api/v1/auth/**")
                                 .permitAll()
+                                .requestMatchers("/api/v1/management/**").hasAnyRole(Role.ADMIN.name(),Role.MODERATOR.name())
+                                .requestMatchers(GET, "/api/v1/management/**").hasAnyAuthority(ADMIN_READ.name(), MODERATOR_READ.name())
+                                .requestMatchers(POST, "/api/v1/management/**").hasAnyAuthority(ADMIN_CREATE.name(), MODERATOR_CREATE.name())
+                                .requestMatchers(PUT, "/api/v1/management/**").hasAnyAuthority(ADMIN_UPDATE.name(), MODERATOR_UPDATE.name())
+                                .requestMatchers(DELETE, "/api/v1/management/**").hasAnyAuthority(ADMIN_DELETE.name(), MODERATOR_DELETE.name())
+                                .requestMatchers("/api/v1/admin/**").hasRole(Role.ADMIN.name())
                                 .anyRequest()
                                 .authenticated()
                 )
